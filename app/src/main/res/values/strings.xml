@@ -1,4 +1,4 @@
-<!-- res/values/strings.xml -->
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Notes Manager</string>
     <string name="add_note">Add Note</string>
@@ -7,7 +7,8 @@
     <string name="note_content">Note Content</string>
     <string name="save_note">Save</string>
     <string name="delete">Delete</string>
-    <string name="empty_field_warning">fill in all fields</string>
-    <string name="note_saved">Note saved</string>
-    <string name="note_deleted">Note deleted</string>
+    <string name="empty_field_warning">Please fill in all fields</string>
+    <string name="note_saved">Note saved successfully</string>
+    <string name="note_deleted">Note deleted successfully</string>
+    <string name="select_note_to_delete">Select a note to delete</string>
 </resources>

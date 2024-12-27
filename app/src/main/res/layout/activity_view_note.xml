@@ -20,17 +20,17 @@
         android:padding="16dp">
 
         <TextView
+            android:id="@+id/textViewNoteName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Your Notes:"
-            android:textSize="20sp"
+            android:textSize="24sp"
             android:layout_marginBottom="16dp"/>
 
-        <ListView
-            android:id="@+id/listViewNotes"
+        <TextView
+            android:id="@+id/textViewNoteContent"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"/>
+            android:layout_height="wrap_content"
+            android:textSize="16sp"/>
 
     </LinearLayout>
 </LinearLayout>

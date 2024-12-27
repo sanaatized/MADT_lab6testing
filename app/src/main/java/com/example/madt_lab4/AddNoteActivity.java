@@ -23,10 +23,20 @@ public class AddNoteActivity extends AppCompatActivity {
         editTextNoteName = findViewById(R.id.editTextNoteName);
         editTextNoteContent = findViewById(R.id.editTextNoteContent);
         Button buttonSaveNote = findViewById(R.id.buttonSaveNote);
-
         sharedPreferences = getSharedPreferences("Notes", MODE_PRIVATE);
 
         buttonSaveNote.setOnClickListener(v -> saveNote());
+    }
+
+    private boolean isNoteNameExists(String noteName) {
+        Set<String> noteSet = sharedPreferences.getStringSet("notes", new HashSet<>());
+        for (String noteStr : noteSet) {
+            String[] parts = noteStr.split("\\|\\|\\|");
+            if (parts.length == 2 && parts[0].equals(noteName)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     private void saveNote() {
@@ -38,10 +48,14 @@ public class AddNoteActivity extends AppCompatActivity {
             return;
         }
 
-        // Save note using SharedPreferences
+        if (isNoteNameExists(noteName)) {
+            Toast.makeText(this, "A note with this name already exists", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         Set<String> noteSet = sharedPreferences.getStringSet("notes", new HashSet<>());
         Set<String> newNoteSet = new HashSet<>(noteSet);
-        newNoteSet.add(noteName + "|||" + noteContent); // Using ||| as delimiter
+        newNoteSet.add(noteName + "|||" + noteContent);
 
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putStringSet("notes", newNoteSet);

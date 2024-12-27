@@ -4,14 +4,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp">
-
     <EditText
         android:id="@+id/editTextNoteName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/note_name"
         android:layout_marginBottom="16dp"/>
-
     <EditText
         android:id="@+id/editTextNoteContent"
         android:layout_width="match_parent"
@@ -21,11 +19,9 @@
         android:hint="@string/note_content"
         android:inputType="textMultiLine"
         android:layout_marginBottom="16dp"/>
-
     <Button
         android:id="@+id/buttonSaveNote"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/save_note"/>
-
 </LinearLayout>
